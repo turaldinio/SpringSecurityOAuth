@@ -3,7 +3,6 @@ package com.guluev.databasewithhibernate.repository;
 import com.guluev.databasewithhibernate.model.Persons;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
