@@ -10,4 +10,5 @@ public class DataBaseRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
+
 }
