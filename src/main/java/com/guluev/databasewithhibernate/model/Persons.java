@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 @Entity
 public class Persons {
     @EmbeddedId
-    private PersonsPrimatyKey personsPrimatyKey;
+    private PersonsPrimaryKey personsPrimaryKey;
     private String name;
     private String surname;
     private int age;
