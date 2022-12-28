@@ -4,6 +4,7 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -16,5 +17,8 @@ public class Persons {
     private String phone_number;
     private String city_of_living;
 
-
+    @Override
+    public String toString() {
+        return personsPrimaryKey.getName() + " " + personsPrimaryKey.getSurname() + " " + personsPrimaryKey.getAge();
+    }
 }
