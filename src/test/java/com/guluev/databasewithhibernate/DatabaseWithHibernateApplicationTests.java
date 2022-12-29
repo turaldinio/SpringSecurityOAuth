@@ -37,8 +37,8 @@ class DatabaseWithHibernateApplicationTests {
                             name(nameList.get(new Random().nextInt(nameList.size()))).
                             surname(surName.get(new Random().nextInt(surName.size()))).
                             age(new Random().nextInt(89)).build())
-                    .phone_number("74928347291").
-                    city_of_living(city.get(new Random().nextInt(city.size())))
+                    .phoneNumber("74928347291").
+                    cityOfLiving(city.get(new Random().nextInt(city.size())))
                     .build();
             entityManager.persist(person);
         });

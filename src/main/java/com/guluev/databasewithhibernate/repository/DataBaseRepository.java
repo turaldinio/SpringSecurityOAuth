@@ -16,7 +16,7 @@ public class DataBaseRepository {
 
     @Transactional
     public List<Persons> getPersonsByCity(String city) {
-        var request = entityManager.createQuery("select p from Persons p where p.city_of_living= :city ", Persons.class);
+        var request = entityManager.createQuery("select p from Persons p where p.cityOfLiving= :city ", Persons.class);
         request.setParameter("city", city);
         return request.getResultList();
 
