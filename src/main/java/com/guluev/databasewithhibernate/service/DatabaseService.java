@@ -19,7 +19,12 @@ public class DatabaseService {
     }
 
     public List<Persons> getPersonsByAge(int age) {
-        return dataBaseRepository.getPersonsByPersonsPrimaryKey_Age(age);
-    }
+//        return dataBaseRepository.getPersonsByPersonsPrimaryKeyAgeLessThanOrderBy(age);
+        return null;
 
+    }
+    public List<Persons> getPersonsByAgeSortByCity(int age) {
+return dataBaseRepository.getPersonsByPersonsPrimaryKey_AgeLessThanOrderByPersonsPrimaryKey(age);
+
+    }
 }
