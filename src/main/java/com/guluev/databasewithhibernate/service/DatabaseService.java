@@ -18,7 +18,7 @@ public class DatabaseService {
         return dataBaseRepository.getAllByCityOfLiving(city);
     }
 
-    public List<Persons> getPersonsByPersonsPrimaryKey_Age(int age) {
+    public List<Persons> getPersonsByAge(int age) {
         return dataBaseRepository.getPersonsByPersonsPrimaryKey_Age(age);
     }
 

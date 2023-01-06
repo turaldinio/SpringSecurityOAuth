@@ -18,11 +18,15 @@ public class DatabaseController {
         this.databaseService = databaseService;
     }
 
-    @GetMapping("by-city")
+    @GetMapping("/by-city")
     public List<Persons> getPersonsByCity(String city) {
         return databaseService.getPersonsByCity(city);
     }
 
-    
+    @GetMapping("/by-age")
+    public List<Persons> getPersonsByAge(int age) {
+        return databaseService.getPersonsByAge(age);
+    }
+
 
 }
