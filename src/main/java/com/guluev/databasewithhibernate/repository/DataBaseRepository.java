@@ -1,25 +1,18 @@
 package com.guluev.databasewithhibernate.repository;
 
 import com.guluev.databasewithhibernate.model.Persons;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public class DataBaseRepository {
+public interface DataBaseRepository extends JpaRepository<Persons, Integer> {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
-    @Transactional
-    public List<Persons> getPersonsByCity(String city) {
-        var request = entityManager.createQuery("select p from Persons p where p.cityOfLiving= :city ", Persons.class);
-        request.setParameter("city", city);
-        return request.getResultList();
-
-    }
+//    @Transactional
+//    public List<Persons> getPersonsByCity(String city) {
+//        var request = entityManager.createQuery("select p from Persons p where p.cityOfLiving= :city ", Persons.class);
+//        request.setParameter("city", city);
+//        return request.getResultList();
+//
+//    }
 
 }
