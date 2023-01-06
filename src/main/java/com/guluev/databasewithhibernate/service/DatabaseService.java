@@ -18,10 +18,6 @@ public class DatabaseService {
         return dataBaseRepository.getAllByCityOfLiving(city);
     }
 
-    public List<Persons> getPersonsByAge(int age) {
-//        return dataBaseRepository.getPersonsByPersonsPrimaryKeyAgeLessThanOrderBy(age);
-        return null;
-
     }
     public List<Persons> getPersonsByAgeSortByCity(int age) {
 return dataBaseRepository.getPersonsByPersonsPrimaryKey_AgeLessThanOrderByPersonsPrimaryKey(age);
