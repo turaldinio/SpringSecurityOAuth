@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class DatabaseWithHibernateApplication {
+public class JPARepository {
 
     public static void main(String[] args) {
-        SpringApplication.run(DatabaseWithHibernateApplication.class, args);
+        SpringApplication.run(JPARepository.class, args);
 
     }
 }
