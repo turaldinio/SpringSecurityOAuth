@@ -11,7 +11,7 @@ public interface DataBaseRepository extends JpaRepository<Persons, Integer> {
 
     List<Persons> getAllByCityOfLiving(String cityName);
 
-    List<Persons> getPersonsByPersonsPrimaryKey_Age(int personsPrimaryKey_age);
+    List<Persons> getPersonsByPersonsPrimaryKey_Age(int age);
 
 
 }

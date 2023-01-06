@@ -23,4 +23,6 @@ public class DatabaseController {
         return databaseService.getPersonsByCity(city);
     }
 
+    
+
 }

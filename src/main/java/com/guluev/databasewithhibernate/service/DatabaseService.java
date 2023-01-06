@@ -18,4 +18,8 @@ public class DatabaseService {
         return dataBaseRepository.getAllByCityOfLiving(city);
     }
 
+    public List<Persons> getPersonsByPersonsPrimaryKey_Age(int age) {
+        return dataBaseRepository.getPersonsByPersonsPrimaryKey_Age(age);
+    }
+
 }
