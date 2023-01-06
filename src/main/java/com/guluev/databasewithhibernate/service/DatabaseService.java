@@ -15,7 +15,7 @@ public class DatabaseService {
     }
 
     public List<Persons> getPersonsByCity(String city) {
-        return dataBaseRepository.getPersonsByCity(city);
+        return dataBaseRepository.getAllByCityOfLiving(city);
     }
 
 }
