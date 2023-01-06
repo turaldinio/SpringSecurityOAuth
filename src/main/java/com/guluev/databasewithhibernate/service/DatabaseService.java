@@ -5,6 +5,7 @@ import com.guluev.databasewithhibernate.repository.DataBaseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DatabaseService {
@@ -18,9 +19,12 @@ public class DatabaseService {
         return dataBaseRepository.getAllByCityOfLiving(city);
     }
 
-    }
     public List<Persons> getPersonsByAgeSortByCity(int age) {
-return dataBaseRepository.getPersonsByPersonsPrimaryKey_AgeLessThanOrderByPersonsPrimaryKey(age);
+        return dataBaseRepository.getPersonsByPersonsPrimaryKey_AgeLessThanOrderByPersonsPrimaryKey(age);
 
+    }
+
+    public Optional<Persons> getPersonByNameAndSurname(String name, String surname) {
+        return dataBaseRepository.findByPersonsPrimaryKey_NameAndPersonsPrimaryKey_Surname(name, surname);
     }
 }

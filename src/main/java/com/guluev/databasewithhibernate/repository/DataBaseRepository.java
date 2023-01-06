@@ -12,7 +12,6 @@ public interface DataBaseRepository extends JpaRepository<Persons, Integer> {
 
     List<Persons> getAllByCityOfLiving(String cityName);
 
-
     List<Persons> getPersonsByPersonsPrimaryKey_AgeLessThanOrderByPersonsPrimaryKey(int age);
 
     Optional<Persons> findByPersonsPrimaryKey_NameAndPersonsPrimaryKey_Surname(String name, String surname);
