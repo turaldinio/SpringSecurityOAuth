@@ -2,10 +2,7 @@ package com.guluev.databasewithhibernate.controller;
 
 import com.guluev.databasewithhibernate.model.Persons;
 import com.guluev.databasewithhibernate.service.DatabaseService;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +25,11 @@ public class DatabaseController {
     @DeleteMapping("/delete")
     public void deletePersonByNameAndSurname(String name, String surname) {
         databaseService.deletePersonByNameAndSurname(name, surname);
+    }
+
+    @PostMapping("/add")
+    public Persons addNewPerson(@RequestBody Persons persons) {
+        return databaseService.addNewPersons(persons);
     }
 
 }
