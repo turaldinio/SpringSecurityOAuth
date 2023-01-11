@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class JPARepository {
+public class SpringSecurity {
 
     public static void main(String[] args) {
-        SpringApplication.run(JPARepository.class, args);
+        SpringApplication.run(SpringSecurity.class, args);
 
     }
 }
