@@ -23,8 +23,9 @@ public class DatabaseController {
     }
 
     @DeleteMapping("/delete")
-    public void deletePersonByNameAndSurname(String name, String surname) {
-        databaseService.deletePersonByNameAndSurname(name, surname);
+    public String deletePersonByNameAndSurname(String name, String surname) {
+        return databaseService.deletePersonByNameAndSurname(name, surname);
+
     }
 
     @PostMapping("/add")

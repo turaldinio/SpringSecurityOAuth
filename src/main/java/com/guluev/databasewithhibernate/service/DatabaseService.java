@@ -2,6 +2,7 @@ package com.guluev.databasewithhibernate.service;
 
 import com.guluev.databasewithhibernate.model.Persons;
 import com.guluev.databasewithhibernate.repository.DataBaseRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,8 +19,14 @@ public class DatabaseService {
         return dataBaseRepository.getAllPersons();
     }
 
-    public void deletePersonByNameAndSurname(String name, String surname) {
-        dataBaseRepository.deleteByPersonsPrimaryKey_NameAndPersonsPrimaryKey_Surname(name, surname);
+    @Transactional
+    public String deletePersonByNameAndSurname(String name, String surname) {
+        try {
+            dataBaseRepository.deleteByPersonsPrimaryKey_NameAndPersonsPrimaryKey_Surname(name, surname);
+        } catch (Exception e) {
+            return "an error occurred while deleting the client "+e.getMessage();
+        }
+        return String.format("The person (%s %s) has been deleted", name, surname);
     }
 
 
