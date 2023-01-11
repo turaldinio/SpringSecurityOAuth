@@ -5,7 +5,6 @@ import com.guluev.databasewithhibernate.service.DatabaseService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/persons")
@@ -29,7 +28,7 @@ public class DatabaseController {
     }
 
     @PostMapping("/add")
-    public Persons addNewPerson(@RequestBody Persons persons) {
+    public String addNewPerson(@RequestBody Persons persons) {
         return databaseService.addNewPersons(persons);
     }
 
