@@ -32,7 +32,7 @@ public class DatabaseService {
 
     public String addNewPersons(Persons persons) {
         var person = dataBaseRepository.save(persons);
-return person.getPersonsPrimaryKey().getName()+" "+person.getPersonsPrimaryKey().getSurname()+" successfully added";
+        return person + " successfully added";
 
     }
 }
