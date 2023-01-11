@@ -10,14 +10,10 @@ import java.util.Optional;
 
 @Repository
 public interface DataBaseRepository extends JpaRepository<Persons, Integer> {
+@Query(value = "select * from Persons",nativeQuery = true)
+    List<Persons> getAllPersons();
 
-    @Query("select p from Persons p where p.cityOfLiving= :cityName")
-    List<Persons> getAllByCityOfLiving(String cityName);
+    void deleteByPersonsPrimaryKey_NameAndPersonsPrimaryKey_Surname(String name, String surname);
 
-    @Query("select p from Persons p where p.personsPrimaryKey.age< :age order by p.personsPrimaryKey.age")
-    List<Persons> getPersonsByPersonsPrimaryKey_AgeLessThanOrderByPersonsPrimaryKey(int age);
-
-    @Query("select p from Persons p where p.personsPrimaryKey.name= :name and p.personsPrimaryKey.surname= :surname")
-    Optional<Persons> findByPersonsPrimaryKey_NameAndPersonsPrimaryKey_Surname(String name, String surname);
 
 }
