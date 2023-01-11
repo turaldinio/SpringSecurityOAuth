@@ -23,4 +23,7 @@ public class DatabaseService {
     }
 
 
+    public Persons addNewPersons(Persons persons) {
+        return dataBaseRepository.save(persons);
+    }
 }
