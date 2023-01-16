@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class SpringSecurity {
+public class SpringSecurityOAuth {
 
     public static void main(String[] args) throws JsonProcessingException {
-        SpringApplication.run(SpringSecurity.class, args);
+        SpringApplication.run(SpringSecurityOAuth.class, args);
 
     }
 }
