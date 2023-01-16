@@ -2,7 +2,10 @@ package com.guluev.databasewithhibernate.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -36,15 +39,21 @@ public class Configurator {
     public UserDetailsService userDetailsManager() {
         List<UserDetails> users = List.of(
                 User.builder().
-                        username("admin").
+                        username("Ivan").
                         password(bCryptPasswordEncoder().encode("password")).
-                        authorities("add", "delete").
+                        roles("READ").
                         build(),
                 User.builder()
-                        .username("user")
+                        .username("Georgiy")
                         .password(bCryptPasswordEncoder().encode("password"))
-                        .authorities("add")
+                        .roles("READ", "WRITE", "DELETE")
+                        .build(),
+                User.builder()
+                        .username("Eva")
+                        .password(bCryptPasswordEncoder().encode("password"))
+                        .roles("DELETE")
                         .build()
+
         );
         return new InMemoryUserDetailsManager(users);
     }
