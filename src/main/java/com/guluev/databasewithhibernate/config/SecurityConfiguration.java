@@ -12,7 +12,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import java.util.List;
 
 @Configuration
-@EnableMethodSecurity()
+@EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true)
 public class SecurityConfiguration {
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
